@@ -15,3 +15,17 @@ CREATE TABLE books (
     genere VARCHAR(50),
     FOREIGN KEY (authors_id) REFERENCES authors(id)
 );
+
+CREATE TABLE roles (
+	id	INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE users (
+	id	INT AUTO_INCREMENT PRIMARY KEY,
+    roles_id INT,
+    user_name VARCHAR(50) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    pasword VARCHAR(250) NOT NULL,
+    FOREIGN KEY (roles_id) REFERENCES roles(id)
+);
