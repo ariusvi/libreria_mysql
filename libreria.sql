@@ -40,3 +40,11 @@ CREATE TABLE loans (
     FOREIGN KEY (users_id) REFERENCES users(id),
     FOREIGN KEY (books_id) REFERENCES books(id)
 );
+
+CREATE TABLE books_favourite (
+	id	INT AUTO_INCREMENT PRIMARY KEY,
+    users_id INT,
+    books_id INT,
+    FOREIGN KEY (users_id) REFERENCES users(id),
+    FOREIGN KEY (books_id) REFERENCES books(id)
+);
