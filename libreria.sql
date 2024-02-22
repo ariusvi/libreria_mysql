@@ -29,3 +29,14 @@ CREATE TABLE users (
     pasword VARCHAR(250) NOT NULL,
     FOREIGN KEY (roles_id) REFERENCES roles(id)
 );
+
+CREATE TABLE loans (
+	id	INT AUTO_INCREMENT PRIMARY KEY,
+    users_id INT,
+    books_id INT,
+	loan_date TIMESTAMP,
+    due_date TIMESTAMP,
+    return_date TIMESTAMP,
+    FOREIGN KEY (users_id) REFERENCES users(id),
+    FOREIGN KEY (books_id) REFERENCES books(id)
+);
